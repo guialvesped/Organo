@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import Banner from './componentes/Banner/Banner';
+import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
 import Rodape from './componentes/Rodape';
@@ -51,7 +51,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Banner/>
+      <Banner enderecoImagem='\imagens\banner.png' textoAlt='Banner principal da página.'></Banner>
       <Formulario times={times.map(time => time.nome)} aoColabCadastrado={colaborador => newColabAdd(colaborador)}/>
       
       {times.map(time =>
