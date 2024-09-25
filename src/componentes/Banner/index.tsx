@@ -6,7 +6,7 @@ interface BannerProps {
     textoAlt ?: string
 }
 
-function Banner ({enderecoImagem, textoAlt} : BannerProps) {
+const Banner = ({enderecoImagem, textoAlt} : BannerProps) => {
  return (
     <header className="banner">
         <img src={enderecoImagem} alt={textoAlt} />
