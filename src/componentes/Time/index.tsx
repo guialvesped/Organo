@@ -1,3 +1,4 @@
+import React from 'react'
 import { IColaborador } from '../../compartilhado/IColaborador'
 import Colaborador from '../Colaborador'
 import './Time.css'
@@ -11,7 +12,7 @@ interface TimeProps {
 
 const Time = (props : TimeProps) => {
     return(
-        (props.colaboradores.length) > 0 && <section className='time' style={{backgroundColor: props.corSecundaria}}>
+        (props.colaboradores.length > 0 ) ? <section className='time' style={{backgroundColor: props.corSecundaria}}>
             <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
             <div className='colaboradores'>
                 {props.colaboradores.map(colaborador =>
@@ -24,6 +25,7 @@ const Time = (props : TimeProps) => {
                      />)}
             </div>
         </section>
+        : <></>
     )
 }
 

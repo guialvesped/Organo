@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
-import Rodape from './componentes/Rodape';
+import { IColaborador } from './compartilhado/IColaborador';
 
 function App() {
 
@@ -44,9 +44,8 @@ function App() {
       corSecundaria: '#FFEEDF'
     },
   ]
-  const [colaboradores, setColaboradores] = useState([])
-  const newColabAdd = (colaborador) => {
-    debugger
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([])
+  const newColabAdd = (colaborador : IColaborador) => {
     setColaboradores([...colaboradores, colaborador])
   }
   return (
@@ -62,7 +61,6 @@ function App() {
         corSecundaria={time.corSecundaria}
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
         /> )}
-        <Rodape/>
         
       
       

@@ -5,10 +5,10 @@ interface CampoTextoProps {
     placeholder : string,
     label : string;
     valor : string,
-    obrigatorio : boolean
+    obrigatorio ?: boolean
 }
 
-const Campotexto = ({aoAlterado, placeholder, label, valor, obrigatorio} : CampoTextoProps) =>{
+const Campotexto = ({aoAlterado, placeholder, label, valor, obrigatorio = false} : CampoTextoProps) =>{
 
    const placeholderModificada = `${placeholder}...`
     
