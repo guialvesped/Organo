@@ -17,6 +17,7 @@ const Formulario = (props : FormularioProps) => {
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [data, setData] = useState('')
 
     const aoSalvar = (evento : React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
@@ -24,7 +25,8 @@ const Formulario = (props : FormularioProps) => {
             nome,
             cargo,
             imagem,
-            time
+            time,
+            data
         })
         setNome('')
         setCargo('')
@@ -55,6 +57,13 @@ const Formulario = (props : FormularioProps) => {
                  valor={imagem}
                   aoAlterado={valor=> setImagem(valor)}
                  />
+                 <Campotexto
+                    label="Data de entrada no time"
+                    placeholder=''
+                    valor={data}
+                    aoAlterado={valor => setData(valor)}
+                    tipo="date"
+                />
                 <Listasuspensa 
                  required ={true}
                  label="Time" 
